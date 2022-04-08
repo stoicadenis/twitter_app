@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "application#hello"
 
-  get 'alta_ruta', to: 'application#alta_ruta'
+  get 'other_route', to: 'application#other_route'
+  get 'create_user', to: 'application#create_user'
 end
