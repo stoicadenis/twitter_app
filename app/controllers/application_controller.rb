@@ -10,5 +10,7 @@ class ApplicationController < ActionController::Base
 	def create_user
 	    user = User.create(name: params[:bla])
 	    # render html: "Userul a fost creat #{user.id}"
-  end
+  	end
+
+  	
 end

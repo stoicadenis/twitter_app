@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get 'other_route', to: 'application#other_route'
   get 'create_user', to: 'application#create_user'
+  get 'users', to:'users#index'
+  get 'users/:id', to:'users#show'
 end
