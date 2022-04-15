@@ -1,9 +1,7 @@
+<%= link_to('Back to users', "/users") %></br>
+
 <% if @user.nil? %>
 	Nu exista userul cerut.
 <% else %>
-	name: <%= @user.name %></br>
-	email: <%= @user.email %></br>
-	age: <%= @user.age %></br>
-	gender: <%= @user.gender %>	</br>
-	phone_number: <%= @user.phone_number %>	</br>
+	<%= render @user %>
 <% end %>

@@ -10,10 +10,9 @@
   </head>
 
   <body>
-    <a href="http://localhost:3000/other_route">Alta ruta</a>
-    </br>
-    <a href="http://localhost:3000/create_user?bla=Denis">Create user</a>
-    </br>
+    <nav>
+      <%= link_to 'Twitter', '/', class: 'navlink'%> | <%= link_to 'Users', '/users', class: 'navlink'%> | <%= link_to 'Contact', '/', class: 'navlink'%>
+    </nav>
     </br>
     <%= yield %>
   </body>
