@@ -1,0 +1,19 @@
+<% if flash[:error] %>
+	<div class="alert alert-danger"><%= flash[:error] %></div>
+<%end%>
+
+<section class="ftco-section contact-section">
+	<div class="container mt-1 row block-9">
+		<div class="ftco-animate form-control">
+			<%= form_with url: login_path do |f| %>
+			  	<div class="row g-1">
+			  		<div class="form-group">
+						<%= f.text_field :email, class: 'col-5', placeholder: 'E-mail', html: {class:'col-sm-8'} %>
+					</div>
+				</div>
+				<%= f.password_field :password, class: 'mt-1 col-3', placeholder: 'Password' %><br/>
+			  	<%= f.submit({ class: 'mt-2 btn btn-primary' })%>
+			<%end%>
+		</div>
+	</div>
+</section>
