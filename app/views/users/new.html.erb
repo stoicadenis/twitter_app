@@ -5,13 +5,7 @@
 	<div class="alert alert-danger"><%= flash[:error] %></div>
 <%end%>
 
-<% if @user.errors.present? %>
-	<div class="alert alert-danger">
-		<% @user.errors.full_messages.each do |error| %>
-				<%= error %></br>
-		<%end%>
-	</div>
-<%end%>
+<%= render partial: 'shared/error_messages', locals: { obj: @user }%>
 
 <section class="ftco-section contact-section">
 	<div class="container mt-1 row block-9">

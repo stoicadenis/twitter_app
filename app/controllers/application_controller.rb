@@ -18,5 +18,14 @@ class ApplicationController < ActionController::Base
 	    # render html: "Userul a fost creat #{user.id}"
   	end
 
+  	private
+  	def check_user
+  		if !logged_in?
+  			redirect_to login_path
+  		end
+  	end
+  	def admin_user
+  		redirect_to(root_url) unless current_user.admin?
+  	end
   	
 end

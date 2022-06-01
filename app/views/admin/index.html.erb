@@ -1,0 +1,10 @@
+<h1> Admin Panel </h1>
+
+<ul class="list-group">
+		<li class="list-group-item list-group-item-primary list-group-item-action">
+			Numar total utilizatori inregistrati: <%= @users.count %>
+		</li>
+		<li class="list-group-item list-group-item-primary list-group-item-action">
+			Numar total utilizatori care sunt admini: <%= @users.where(admin: true).count %>
+		</li>
+</ul>

@@ -1,3 +1,33 @@
 <%= link_to('Back to users', "/users") %></br>
 
-<%= render @user %>
+<div class="row">
+	
+		<% if @user.nil? %>
+			Nu exista userul cerut!
+		<% else %>
+			<div class="col-md-4">
+				<%= render @user %>
+				<%= render partial: 'shared/stats', locals: { obj: @user }%>
+				<% if current_user?(@user) %>
+				<%= render partial: 'shared/error_messages', locals: { obj: @post }%>
+				<section class="ftco-section">
+					<div class="container mt-1 row block-9">
+						<div class="ftco-animate form-control">
+							<%= render partial: 'shared/post_form', locals: { post: @post }%>
+						</div>
+					</div>
+				</section>
+				<%end%>
+			</div>
+			<div class="col-md-6">
+				<h3>Posts (<%= @posts.count %>)</h3>
+				<%= render @posts %>
+				<%= will_paginate(@posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination bg-transparent") %>
+			</div>
+		<%end%>
+	
+	
+</div>
+
+
+

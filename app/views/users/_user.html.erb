@@ -11,5 +11,11 @@
 		gender: <%= user.gender %>	</br>
 		phone_number: <%= user.phone_number %>	</br>
     </p>
+    <% if current_user.admin? && !current_user?(user) && user.name[0] == 'A' %>
+    <%= link_to 'DELETE', user, data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+    <% end %>
+    <% if current_user.admin? && !current_user?(user) && !user.admin? %>
+    <%= link_to 'MAKE ADMIN', user, data:{turbo_method: :put, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

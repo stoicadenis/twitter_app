@@ -1,0 +1,10 @@
+<div class="row">
+	<a href="<%= following_user_path(obj) %>">
+		<strong><%= obj.following.count %></strong>
+		<strong>Following</strong>
+	</a>
+	<a href="<%= followers_user_path(obj) %>">
+		<strong><%= obj.followers.count %></strong>
+		<strong>Followers</strong>
+	</a>
+</div>

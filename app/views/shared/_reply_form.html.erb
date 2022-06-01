@@ -1,0 +1,7 @@
+<%= form_with reply do |f| %>
+	<div class="row g-1">
+		<%= f.label :message%>
+		<%= f.text_field :message, class: 'col-3', placeholder: 'Message' %>
+	</div>
+	<%= f.submit 'Reply', class:'btn btn-primary mt-1' %>
+<%end%>

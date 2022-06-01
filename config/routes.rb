@@ -6,12 +6,18 @@ Rails.application.routes.draw do
 
   get 'other_route', to: 'application#other_route'
   get 'create_user', to: 'application#create_user'
-  resources :users
-
+  resources :users do
+    member do
+      get :following, :followers, :reply
+    end
+  end
+  resources :posts
+  resources :admin
+  resources :reply
+  
   get 'login', to:'sessions#new'
   post 'login', to:'sessions#create'
-  get 'logout', to:'sessions#destroy'
-  # get 'users', to:'users#index'
+  delete 'logout', to:'sessions#destroy'
   # get 'users/new', to:'users#new'
   # get 'users/:id', to:'users#show'
   # post 'users', to: 'users#create'

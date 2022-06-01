@@ -1,0 +1,19 @@
+<%= link_to('Back to users', "/users") %></br>
+
+<div class="row">
+	
+		<% if @user.nil? %>
+			Nu exista userul cerut!
+		<% else %>
+			<div class="col-md-4">
+				<%= render @user %>
+			</div>
+			<div class="col-md-6">
+				<h3><%= @title %></h3>
+				<%= render @users %>
+				<%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination bg-transparent") %>
+			</div>
+		<%end%>
+	
+	
+</div>

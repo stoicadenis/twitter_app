@@ -1,0 +1,9 @@
+<%= form_with model: post do |f| %>
+	<div class="row g-1">
+		<%= f.label :title%>
+		<%= f.text_field :title, class: 'col-7', placeholder: 'Title' %>
+		<%= f.label :description%>
+		<%= f.text_field :description, class: 'col-3', placeholder: 'Description' %>
+	</div>
+	<%= f.submit post.class, class:'btn btn-primary mt-1' %>
+<%end%>

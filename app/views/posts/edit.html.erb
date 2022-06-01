@@ -1,0 +1,11 @@
+<h1>Edit Post</h1>
+
+<%= render partial: 'shared/error_messages', locals: { obj: @post }%>
+
+<section class="ftco-section">
+	<div class="container mt-1 row block-9">
+		<div class="ftco-animate form-control">
+			<%= render partial: 'shared/post_form', locals: { post: @post }%>
+		</div>
+	</div>
+</section>
