@@ -1,0 +1,9 @@
+<% if comment.user_id.present? %>
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <%= link_to User.find(comment.user_id).name, user_path(comment.user_id)%> said:
+      <%= comment.body %>
+      <%= link_to 'reply', new_post_comment_path(@post, parent_id: comment.id), remote: true, class: 'd-block' %>
+    </div>
+  </div>
+<%end%>

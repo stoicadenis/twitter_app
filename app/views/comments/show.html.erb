@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="card my-1" style="width: 25rem;">
+  <div class="card-body">
+    <p class="font-weight-bold">Comments</p>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+<%= render @post.comments %>
+
+<div>
+  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
+  <%= link_to "Back to comments", comments_path %>
+
+  <%= button_to "Destroy this comment", @comment, method: :delete %>
+</div>

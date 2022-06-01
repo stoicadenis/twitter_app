@@ -5,5 +5,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence:true, length: { maximum: 120 }
 
-  has_many :replies, dependent: :destroy
+  has_many :comments
 end
